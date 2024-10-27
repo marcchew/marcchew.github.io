@@ -1,0 +1,197 @@
+body {
+  display: grid;
+  overflow-x: hidden;
+	  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: #474747;
+}
+
+main {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.social-icons {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.social-icons:hover {
+  margin-top: -1rem;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.social-icons > svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+.social-icons > label {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.social-icons:hover > label {
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+main > div {
+  min-height: 100vh;
+}
+.hover {
+  transition: all 0.3s ease;
+}
+
+.hover:hover {
+  margin-top: -4rem;
+  margin-bottom: 5rem !important;
+}
+a:hover {
+  outline: none;
+  color: inherit;
+  text-decoration: none !important;
+}
+.job-card {
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  width: auto;
+}
+
+.job-card:hover {
+  box-shadow: 0rem 0rem 0.5rem grey;
+}
+.blink {
+  animation: blinking 1.2s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    color: black;
+  }
+  49% {
+    color:black;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: black;
+  }
+}
+
+
+.img-cutoff {
+  max-height: 14rem;
+  overflow-y: hidden;
+}
+
+#quick-actions {
+  transition: all 0.3s ease;
+  opacity: 0;
+  color: #666666;
+}
+
+#quick-actions > a {
+  color: #666666;
+  transition: all 0.3s ease;
+}
+
+#quick-actions > a:hover {
+  color: #999999;
+}
+
+#intro-title {
+  word-break: break-word;
+}
+
+#about-content {
+  font-size: larger;
+  width: auto;
+}
+
+#projects-container {
+  display: grid;
+}
+
+
+
+.skills-image {
+  max-height: 12rem;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+
+  #intro-title {
+    word-break: default;
+  }
+
+  #about-content {
+    width: 100%;
+  }
+
+  .job-card {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #about-content {
+    width: 50%;
+  }
+
+  #projects-container {
+    display: grid;
+  }
+
+  .card-projects {
+    width: 25rem;
+  }
+}
+.skills-image {
+  max-height: 12rem;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+
+  #intro-title {
+    word-break: default;
+  }
+
+  #about-content {
+    width: 100%;
+  }
+
+  .job-card {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #about-content {
+    width: 50%;
+  }
+
+  #projects-container {
+    display: grid;
+  }
+
+  .card-projects {
+    width: 25rem;
+  }
+}
