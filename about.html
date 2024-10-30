@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Marc Chew - Home</title>
+    <title>Marc Chew - About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta tags -->
-    <meta name="keywords" content="Marc Chew, marc chew, programming, developer">
-    <meta name="description" content="Marc Chew is a self-learning developer, learning Python, C++, HTML, CSS, JS, and Linux.">
+    <meta name="keywords" content="Marc Chew, about, developer">
+    <meta name="description" content="About Marc Chew, a self-learning developer.">
     <!-- Stylesheets -->
     <link href="style.css" rel="stylesheet" media="all" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,13 +17,13 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="index.html">Marc Chew</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAbout" aria-controls="navbarNavAbout" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavAbout">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link active" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="skills.html">Skills</a>
@@ -41,19 +41,14 @@
         </div>
     </nav>
 
-    <!-- Intro Section -->
+    <!-- About Section -->
     <main class="vh-100 pr-3 pl-3">
-        <div class="d-flex align-items-center" style="min-height: 100vh;">
-            <div>
-                <div id="intro-title" class="d-flex align-items-end">
-                    <h1 class="display-4">
-                        <span style="color:#ab72ed">import </span><span style="color:#000000">sys<br></span>
-                        <span style="color:#000000">sys.stdout.</span><span style="color:#3a7eb5">write</span><span style="color:#000000">(</span><span style="color:#5bcf6e">"Hello"</span><span style="color:#000000">)</span>
-                    </h1>
-                    <h1 class="display-3 blink">|</h1>
-                </div>
-                <h4 class="font-weight-light" style="color: #b6bfb7;">#Self-learning developer</h4>
-                <h4 class="font-weight-light" style="color: #b6bfb7;">#Learning Python, C++, HTML, CSS, JS, and Linux</h4>
+        <div class="d-flex justify-content-center flex-column" id="about">
+            <h1 class="mt-4 mb-4 font-weight-light">About</h1>
+            <div id="about-content" class="font-weight-light">
+                <p>
+                    I've had interest in programming at an early age, learning Python as my first language and picking up more languages over the years.
+                </p>
             </div>
         </div>
     </main>
