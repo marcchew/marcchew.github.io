@@ -1,8 +1,17 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
+* {
   --bs-body-bg: antiquewhite;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 10%;
+  scroll-behavior: smooth;
 }
+*::-webkit-scrollbar { 
+  display: none;
+}
+
 
 body {
   scroll-behavior: smooth;
@@ -20,15 +29,6 @@ h1 {
 main {
   margin-left: 3%;
   margin-right: 3%;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding: 10%;
-}
-
-main::-webkit-scrollbar { 
-  display: none;
 }
 
 .navbar {
