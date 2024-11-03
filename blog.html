@@ -55,7 +55,7 @@
             <div class="col-lg-6 px-0">
                 <h1 class="display-4 fst-italic" id="featured-title"></h1>
                 <p class="lead my-3" id="featured-description"></p>
-                <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold" id="featured-link">Continue reading...</a></p>
+                <!-- Removed the "Continue reading" link for the featured post -->
             </div>
         </div>
 
@@ -97,28 +97,27 @@
                         <ul class="list-unstyled" id="recent-posts">
                         </ul>
                     </div>
-
-                    <!-- Archives
-                    <div class="p-4">
-                        <h4 class="fst-italic">Archives</h4>
-                        <ol class="list-unstyled mb-0" id="archives"></ol>
-                        </ol>
-                    </div>
-
-                    <div class="p-4">
-                        <h4 class="fst-italic">Elsewhere</h4>
-                        <ol class="list-unstyled">
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Facebook</a></li>
-                        </ol>
-                    </div>
-                -->
                 </div>
             </div>
         </div>
 
     </main>
+
+    <!-- Modal for displaying blog post content -->
+    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="postModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="postModalContent">
+            <!-- Post content will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/posts.json')
@@ -128,7 +127,7 @@
                     const featured = data.featured;
                     document.getElementById('featured-title').textContent = featured.title;
                     document.getElementById('featured-description').textContent = featured.description;
-                    document.getElementById('featured-link').href = featured.link;
+                    // Removed the link assignment for the featured post
 
                     // Load Post Previews
                     const postPreviews = document.getElementById('post-previews');
@@ -159,9 +158,17 @@
                         description.textContent = post.description;
 
                         const link = document.createElement('a');
-                        link.href = post.link;
+                        link.href = '#';
                         link.className = 'icon-link gap-1 icon-link-hover stretched-link';
                         link.textContent = 'Continue reading';
+                        link.setAttribute('data-bs-toggle', 'modal');
+                        link.setAttribute('data-bs-target', '#postModal');
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            // Set the modal content
+                            document.getElementById('postModalLabel').textContent = post.title;
+                            document.getElementById('postModalContent').innerHTML = post.content;
+                        });
 
                         cardBody.appendChild(category);
                         cardBody.appendChild(title);
@@ -204,15 +211,16 @@
                         const li = document.createElement('li');
 
                         const link = document.createElement('a');
-                        link.href = post.link;
+                        link.href = '#';
                         link.className = 'd-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top';
-
-                        // const img = document.createElement('img');
-                        // img.src = post.image || 'https://via.placeholder.com/100x96';
-                        // img.width = 100;
-                        // img.height = 96;
-                        // img.className = 'bd-placeholder-img';
-                        // img.alt = '';
+                        link.setAttribute('data-bs-toggle', 'modal');
+                        link.setAttribute('data-bs-target', '#postModal');
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            // Set the modal content
+                            document.getElementById('postModalLabel').textContent = post.title;
+                            document.getElementById('postModalContent').innerHTML = post.content;
+                        });
 
                         const div = document.createElement('div');
                         div.className = 'col-lg-8';
@@ -228,23 +236,11 @@
                         div.appendChild(h6);
                         div.appendChild(small);
 
-                        // link.appendChild(img);
                         link.appendChild(div);
 
                         li.appendChild(link);
                         recentPosts.appendChild(li);
                     });
-
-                    // Load Archives
-                    // const archives = document.getElementById('archives');
-                    // data.archives.forEach(archive => {
-                    //     const li = document.createElement('li');
-                    //     const link = document.createElement('a');
-                    //     link.href = archive.link;
-                    //     link.textContent = archive.month;
-                    //     li.appendChild(link);
-                    //     archives.appendChild(li);
-                    // });
                 })
                 .catch(error => console.error('Error fetching posts:', error));
         });
