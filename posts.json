@@ -1,0 +1,20 @@
+{
+    "featured": {
+      "title": "Ramblings of a Madman",
+      "description": "Ramblings of a Madman.",
+      "link": "#"
+    },
+    "posts": [
+      {
+        "title": "Ramblings of a Madman",
+        "date": "November 3, 2024",
+        "author": "Marc Chew",
+        "category": "Introduction",
+        "description": "A short introduction.",
+        "content": "Uhh yeah, so hi! I'm Marc and this is my (new) blog! I hope you will enjoy reading the (soon-to-come) posts just as much as I enjoy writing them! Peace!",
+        "link": "#",
+        "image": "media/project3.jpg"
+      }
+    ]
+}
+  

@@ -1,8 +1,17 @@
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --bs-body-bg: antiquewhite;
+}
+
 body {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: antiquewhite !important;
 }
 
 h1 {
@@ -12,8 +21,15 @@ h1 {
 main {
   margin-left: 3%;
   margin-right: 3%;
-  overflow-y: scroll;
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 10%;
+}
+
+.container::-webkit-scrollbar { 
+  display: none;
 }
 
 .navbar {
