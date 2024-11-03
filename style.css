@@ -28,7 +28,7 @@ main {
   padding: 10%;
 }
 
-.container::-webkit-scrollbar { 
+main::-webkit-scrollbar { 
   display: none;
 }
 
